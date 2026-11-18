@@ -3,7 +3,7 @@
 > 소규모 필라테스·요가·PT 스튜디오용 **브랜드 홈페이지 + 온라인 예약 + 관리자 페이지** 견본 프로젝트입니다.
 > ※ 포트폴리오용 가상 매장으로, 매장명·주소·연락처·후기는 모두 예시입니다.
 
-**🔗 데모:** `https://(배포 후 URL 입력)`
+**🔗 데모:** https://onkyul-pilates.vercel.app  ·  예약: [/booking](https://onkyul-pilates.vercel.app/booking)
 
 <!-- 스크린샷: docs/screenshots/ 폴더에 넣고 아래 경로를 맞춰 주세요 -->
 | 메인 (PC) | 예약 시간표 (모바일) | 예약 완료 | 관리자 명단 |
