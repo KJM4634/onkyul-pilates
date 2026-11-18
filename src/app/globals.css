@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* 디자인 토큰: 따뜻한 오프화이트 + 세이지/베이지 */
+@theme {
+  --color-cream: #f8f5ef;
+  --color-cream-deep: #efe9df;
+  --color-sand: #dccdb6;
+  --color-sand-deep: #b9a385;
+  --color-sage: #7f9077;
+  --color-sage-deep: #5c6d55;
+  --color-sage-soft: #e3e8de;
+  --color-ink: #2f2b26;
+  --color-ink-soft: #6b645b;
+  --color-line: #e2dbcf;
+
+  --font-sans: var(--font-noto-sans), system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sage-deep);
+  outline-offset: 2px;
+}
+
+/* ---------- 애니메이션 ---------- */
+@theme {
+  --animate-pop: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-draw: draw 0.5s 0.25s ease-out both;
+  --animate-float: float 14s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-hero-zoom: hero-zoom 18s ease-out both;
+
+  @keyframes hero-zoom {
+    from { transform: scale(1.15); }
+    to { transform: scale(1.02); }
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.4); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  @keyframes draw {
+    from { stroke-dasharray: 24; stroke-dashoffset: 24; }
+    to { stroke-dasharray: 24; stroke-dashoffset: 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(4%, -6%) scale(1.06); }
+    66% { transform: translate(-5%, 4%) scale(0.96); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* 스크롤 등장 효과: JS가 켜진 경우에만 숨김 → 접근성·SEO 안전 */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js-reveal [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js-reveal [data-reveal] { opacity: 1; transform: none; }
+}
