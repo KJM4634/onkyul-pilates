@@ -5,10 +5,13 @@
 
 **🔗 데모:** https://onkyul-pilates.vercel.app  ·  예약: [/booking](https://onkyul-pilates.vercel.app/booking)
 
-<!-- 스크린샷: docs/screenshots/ 폴더에 넣고 아래 경로를 맞춰 주세요 -->
-| 메인 (PC) | 예약 시간표 (모바일) | 예약 완료 | 관리자 명단 |
-|---|---|---|---|
-| ![메인](docs/screenshots/home.png) | ![시간표](docs/screenshots/booking-mobile.png) | ![완료](docs/screenshots/complete.png) | ![관리자](docs/screenshots/admin.png) |
+| 메인 (PC) | 예약 시간표 (모바일) |
+|---|---|
+| ![메인](docs/screenshots/home.png) | ![예약 시간표](docs/screenshots/booking-mobile.png) |
+
+| 예약 정보 입력 | 관리자 대시보드 |
+|---|---|
+| ![예약 정보 입력](docs/screenshots/complete.png) | ![관리자 대시보드](docs/screenshots/admin.png) |
 
 ---
 
